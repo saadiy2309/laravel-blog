@@ -26,8 +26,13 @@ Route::get('posts/{post}', function ($slug) {
         // abort(404);
         return redirect('/');
     }    
-    $post = file_get_contents($path);
 
+    $post = cache()->remember("posts.{slug}", 1200, function() use ($path) {
+        var_dump('caching is working');
+        return file_get_contents($path);
+    });
+
+    
     return view('post', [
         'post' => $post 
     ]);
