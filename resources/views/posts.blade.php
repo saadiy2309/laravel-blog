@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-
-
-<title>My blog</title>
-<link rel="stylesheet" type="text/css" href="/app.css">
-
-
-<body>
+<x-layout>
 
     @foreach ($posts as $post)
-        <article>
-            <h1>
-                <a href="/posts/{{ $post->slug }}">
-                    {{ $post->title }}    
-                </a>
+            <article>
+                <h3>
+                    <a href="/posts/{{ $post->slug }}">
+                        {{ $post->title }}    
+                    </a>
+                    
+                </h3>
                 
-            </h1>
-            
-            <div>
-                {{ $post->excerpt }}
-            </div>
-        </article>
+                <div>
+                    {{ $post->excerpt }}
+                </div>
+            </article>
     @endforeach
 
-    
-</body>
+  
+
+</x-layout>
