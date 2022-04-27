@@ -4,9 +4,8 @@
             <article>
                 <h3>
                     <a href="/posts/{{ $post->slug }}">
-                        {{ $post->title }}    
+                        {{ $post->title }}
                     </a>
-                    
                 </h3>
                 
                 <div>
