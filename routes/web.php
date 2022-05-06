@@ -29,3 +29,12 @@ Route::get('/posts/{post}', function (Post $post) {
         'post' => $post
     ]); 
 })->where('post:slug', '[A-z]_-+');
+
+
+
+Route::get('categories/{category}', function (Category $category) { 
+
+    return view('posts', [ 
+        'posts' => $category->$posts
+    ]); 
+});
